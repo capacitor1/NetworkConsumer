@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="App1.MainWindow" SizeChanged="SC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Network Consumer">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt"/>
+    </Window.SystemBackdrop>
+
+    <Grid>
+        <Border x:Name="AppTitleBar"
+            Height="48"
+            VerticalAlignment="Top">
+            <TextBlock VerticalAlignment="Center" Margin="10,-20,0,0" Text="Network Consumer" />
+        </Border>
+        <Grid BorderBrush="White" Background="#F0F0F8FF" BorderThickness="3" CornerRadius="6" Padding="5" Margin="10,35,0,0" Width="400" Height="70" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock x:Name="Speed" Text="0.00 MB/s" Margin="0,0,0,0" FontFamily="Lucida Console" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid BorderBrush="White" Background="#F0F0F8FF" BorderThickness="3" CornerRadius="6" Padding="5" Margin="420,35,0,0" Width="200" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock x:Name="Total" Text="0 B" Margin="0,0,0,0" FontFamily="Lucida Console" FontSize="20" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid BorderBrush="White" Background="#F0F0F8FF" BorderThickness="3" CornerRadius="6" Padding="5" Margin="420,70,0,0" Width="200" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" PointerPressed="Grid_PointerPressed" x:Name="G">
+            <TextBlock x:Name="Thread" Text="0 T" Margin="0,0,0,0" FontFamily="Lucida Console" FontSize="20" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid BorderBrush="White" Background="#F0F0F8FF" BorderThickness="3" CornerRadius="6" Padding="5" Margin="10,145,0,0" Width="400" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock x:Name="Detail" Text="MemoryBuffer 0 B / URL 0 / Active 0" Margin="0,0,0,0" FontFamily="Lucida Console" FontSize="14" HorizontalAlignment="Left"/>
+        </Grid>
+        <ComboBox x:Name="URL" Height="30" Width="610" Margin="10,110,0,0">
+        </ComboBox>
+        <Button x:Name="S" Content="Start" Margin="420,145,0,0" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click" ClickMode="Press"/>
+        <Button x:Name="T" Content="Stop" Margin="520,145,0,0" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Click="T_Click" ClickMode="Press"/>
+    </Grid>
+</Window>
